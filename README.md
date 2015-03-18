@@ -7,5 +7,19 @@ Realisation
 Pierre  
 Azarias  
 
-User manual
+Dependencies
 ==========
+<ul>
+  <li>
+  <a href="http://jquery.com/">jQuery</a> 
+  </li>
+  <li>
+    <a href="https://jqueryui.com/">jqueryUI</a>  
+  </li>
+  <li>
+     <a href="http://www.jstree.com/">jsTree</a>  
+  </li>
+</ul>
+ 
+
+
