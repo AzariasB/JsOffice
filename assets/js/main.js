@@ -1,3 +1,6 @@
 
 
-alert(42);
+
+$(document).ready(function(){
+    
+});

@@ -1,0 +1,14 @@
+
+html{
+    font-family: sans-serif;
+}
+
+#leftSide{
+    display: inline-block;
+    width: 33%;
+}
+
+#rightSide{
+    display: inline-block;
+   width:  66%;
+}

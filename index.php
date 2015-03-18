@@ -7,10 +7,22 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>JsOffice</title>
+        <link href="assets/css/mystyle.css" rel="stylesheet">
+        <link href="assets/js/jqueryUi/jquery-ui.min.css" rel="stylesheet">
     </head>
     <body>
-      
-        <script src="assets/js/main.js"></script>
+        <h1>JsOffice</h1>
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/jqueryUi/jquery-ui.min.js">
+        < script src = "assets/js/main.js" ></script>
+
+        <div id="leftSide" >
+            
+        </div>
+
+        <div id="rightSide" >
+        </div>
+
     </body>
 </html>
