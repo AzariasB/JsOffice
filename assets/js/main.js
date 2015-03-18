@@ -14,6 +14,6 @@ $(function() {
 // Gère les tabs du menu
 $(function() {
     $("#tabs").tabs({
-        event: "mouseover"
+        event: "click"
     });
 });
