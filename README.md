@@ -19,6 +19,9 @@ Dependencies
   <li>
      <a href="http://www.jstree.com/">jsTree</a>  
   </li>
+  <li>
+    <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>
+  </li>
 </ul>
  
 
