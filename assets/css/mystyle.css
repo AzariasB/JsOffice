@@ -3,16 +3,24 @@ html{
     font-family: sans-serif;
 }
 
+#kernel{
+    padding: 5px;
+    background-color: grey;
+}
 
 #leftSide{
     display: inline-block;
-    width: 33%;
-    height: 80vh;
+    width: 20%;
+    height: 80vh;   
 }
 
+#tabs{
+    height: 79vh;
+
+}
 #rightSide{
     display: inline-block;
-    width: 66%;
-    height: 80vh;
+    width: 79%;
     vertical-align: top;
+    float: right;
 }
