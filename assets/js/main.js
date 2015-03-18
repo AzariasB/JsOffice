@@ -1,6 +1,10 @@
-
-
-
+//       _      ____   __  __ _          
+//      | |    / __ \ / _|/ _(_)         
+//      | |___| |  | | |_| |_ _  ___ ___ 
+//  _   | / __| |  | |  _|  _| |/ __/ _ \
+// | |__| \__ \ |__| | | | | | | (_|  __/
+//  \____/|___/\____/|_| |_| |_|\___\___|
+//
 
 /*
  * Ici, on charge les différentes parties du document
@@ -15,7 +19,7 @@ $(function () {
             load(window.location.pathname + 'assets/views/accordion.php', function () {
                 setUpAccordion();
             });
-            
+
 });
 
 // Gère les tabs du menu
@@ -50,3 +54,20 @@ function setUpAccordion() {
                 }
             });
 }
+
+$(document).ready(function () {
+    var arr =
+            [
+                '      _      ____   __  __ _    ',
+                '     | |    / __ \\ / _|/ _(_)  ',
+                '     | |___| |  | | |_| |_ _  ___ ___ ',
+                ' _   | / __| |  | |  _|  _| |/ __/ _ \\ ',
+                '| |__| \\__ \\ |__| | | | | | | (_|  __/',
+                ' \\____/|___/\\____/|_| |_| |_|\\___\\___|'
+            ];
+            
+    for(var off in arr ){
+        console.log(arr[off]);
+    }
+    console.log('By Pierre & Azarias');
+});

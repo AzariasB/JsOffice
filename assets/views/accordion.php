@@ -1,8 +1,20 @@
 <div class="group">
     <h3>HomeDir</h3>
-    <div>
-        <!-- Mettre le jsTree ici-->
-    </div> 
+    <div id="container">
+        <ul>
+            <li>Root node
+                <ul>
+                    <li>Child node 1</li>
+                    <li>Child node 2</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(function () {
+            $('#container').jstree();
+        });
+    </script>
 </div>
 <div class="group">
     <h3>Calculatrice</h3>
