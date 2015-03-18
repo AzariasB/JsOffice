@@ -6,9 +6,16 @@ html{
 #leftSide{
     display: inline-block;
     width: 33%;
+    height: 80vh;
 }
 
 #rightSide{
     display: inline-block;
-   width:  66%;
+    width:  66%;
+    height: 80vh;
+}
+
+#accordion{
+   height: fit-content;
+   vertical-align: top;
 }
