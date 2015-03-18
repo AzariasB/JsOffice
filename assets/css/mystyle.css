@@ -3,6 +3,7 @@ html{
     font-family: sans-serif;
 }
 
+
 #leftSide{
     display: inline-block;
     width: 33%;
@@ -11,11 +12,7 @@ html{
 
 #rightSide{
     display: inline-block;
-    width:  66%;
+    width: 66%;
     height: 80vh;
-}
-
-#accordion{
-   height: fit-content;
-   vertical-align: top;
+    vertical-align: top;
 }

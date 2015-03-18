@@ -11,27 +11,19 @@ and open the template in the editor.
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="assets/js/main.js"></script>
+
         <link href="assets/css/mystyle.css" rel="stylesheet">
-        <script>
-            $(function() {
-                $("#accordion").accordion({
-                    heightStyle: "fill"
-                });
-            });
-            $(function() {
-                $("#tabs").tabs({
-                    event: "mouseover"
-                });
-            });
-        </script>
+        <link href="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/M4103C/projet/jquery-ui.css" rel="stylesheet">
+        <link href="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/M4103C/projet/style.css" rel="stylesheet">
     </head>
     <body>
 
+
         <h1>JsOffice</h1>
         <script src="assets/js/jquery.js"></script>
-        <script src="assets/js/jqueryUi/jquery-ui.min.js">
-            < script src = "assets/js/main.js" ></script>
+        <script src="assets/js/jqueryUi/jquery-ui.min.js"></script>
+        <script src = "assets/js/main.js" ></script>
 
         <div id="kernel" >
             <div id="leftSide" >
@@ -74,9 +66,9 @@ and open the template in the editor.
                         <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                     </div>
                 </div>
+
             </div>
         </div>
-
     </body>
 </html>
 
