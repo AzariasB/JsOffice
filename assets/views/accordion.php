@@ -1,18 +1,76 @@
 <!-- L'accordeon contient aussi le JsTree ! -->
 <div>
     <h3>HomeDir</h3>
-    <div id="container">
-        <ul>
-            <li data-jstree='{ "selected" : true, "opened" : true }'>Root node
-                <ul>
-                    <li class="openable" >Child node 1</li>
-                    <li class="openable">Child node 2</li>
-                </ul>
-            </li>
-        </ul>
+
+    <div id="tree" >
     </div>
+
+    <script src="assets/js/jstree.min.js"></script>
     <script>
-        $('#container').jstree();
+        init();
+        // création du menu contextuel ouvert sur clic droit
+        function createmenu(node)
+        {
+            var tree = $("#tree").jstree(true);
+            return {
+                "item1":
+                        {
+                            "label": "Create Directory",
+                            "action": function()
+                            {
+                                node = tree.create_node(node);
+                                tree.edit(node);
+                            }
+                        },
+                "item2":
+                        {
+                            "label": "Create File",
+                            "action": function()
+                            {
+                                node = tree.create_node(node, {"type": "file"});
+                                tree.edit(node);
+                            }
+                        },
+                "item3":
+                        {
+                            "label": "Rename",
+                            "action": function(obj)
+                            {
+                                tree.edit(node);
+                            }
+                        },
+                "item4":
+                        {
+                            "label": "Remove",
+                            "action": function(obj)
+                            {
+                                tree.delete_node(node);
+                            }
+                        }
+            };
+        }
+
+
+        function init()
+        {
+            // initialisation de l'arbre
+            $('#tree').jstree({
+                'core': {
+                    "animation": 0,
+                    "check_callback": true,
+                    "themes": {"stripes": true},
+                    'data': {"url": "./assets/js/data/root.json", "dataType": "json"}// needed only if you do not supply JSON headers
+                },
+                "types": {
+                    "#": {"max_children": 1, "max_depth": 4, "valid_children": ["root"]},
+                    "root": {'icon': "./assets/images/folder.png", "valid_children": ["default"]},
+                    "default": {'icon': "./assets/images/folder.png", "valid_children": ["default", "file"]},
+                    "file": {'icon': "./assets/images/blog.png", "valid_children": []}
+                },
+                "plugins": ["contextmenu", "dnd", "state", "types", "wholerow"],
+                "contextmenu": {"items": createmenu}
+            });
+        }
     </script>
 </div>
 <div>
@@ -84,7 +142,7 @@
         <div id="dialog" title="Alert" hidden="" >
             <p id="textContent" ></p>
         </div>
-        
+
         <script src="assets/js/calculatrice.js"></script>
     </div>
 </div>

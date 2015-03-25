@@ -12,18 +12,16 @@ $(document).ready(function() {
      * Toutes les variables correspondant aux parties de la DOM
      */
     var tabs = $("#tabs"),
-            tabContent = $("#tab_content"),
+            tabContent = $("#accordion"),
             tabTemplate = "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>",
             tabCounter;
-
-    $.ajax({async: false});
 
     /*
      * Ici, on charge les différentes parties du document
      * Comme ça on a pas un index.php tout moche et incompréhensible
      */
     $(function() {
-
+        $.ajax({async: false});
         //Chargement de l'éditeur de texte
         $('#tabs-1').load(window.location.pathname + 'assets/views/textEditor.php', function() {
             initDoc();
@@ -34,7 +32,8 @@ $(document).ready(function() {
                     setUpAccordion();
                 });
     });
-// Gère les tabs du menu
+
+    //Gère les tabs du menu
     $(function() {
         tabCounter = 1;
         tabs
@@ -50,12 +49,13 @@ $(document).ready(function() {
 
     function setUpAccordion() {
         //L'accordéon en lui-même
-        $('#accordion').accordion({
-            header: "div>h3",
-            heightStyle: "fill",
-            active: false,
-            collapsible: true
-        })
+        $('#accordion')
+                .accordion({
+                    header: "div>h3",
+                    heightStyle: "fill",
+                    active: false,
+                    collapsible: true
+                })
                 .sortable({
                     axis: "y",
                     handle: "h3",
@@ -69,13 +69,14 @@ $(document).ready(function() {
                 });
 
         //Le jsTree qui doit ouvrir des tabs
-        $('.openable').bind('click', function() {
-            addTab($(this).children('a'));
+        $(document.body).on('click','.openable',function(){
+            addTab($(this).children() );
         });
     }
 
 
     function addTab(tabTitle) {
+        console.log(tabTitle);
         var label = $(tabTitle).text() || "Tab " + tabCounter,
                 id = "tabs-" + tabCounter,
                 li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)),
