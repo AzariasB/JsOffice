@@ -12,7 +12,9 @@
  */
 $(function () {
     //Chargement de l'éditeur de texte
-    $('#tabs-1').load(window.location.pathname + 'assets/views/textEditor.php');
+    $('#tabs-1').load(window.location.pathname + 'assets/views/textEditor.php',function(){
+        initDoc();
+    });
 
     //Chargement de l'accordeon latéral
     $('#accordion').

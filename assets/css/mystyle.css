@@ -43,3 +43,6 @@ img.intLink { border: 0; }
 }
 #editMode label { cursor: pointer; }
 
+h3:before{
+    content: none !important;
+}
