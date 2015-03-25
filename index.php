@@ -39,7 +39,7 @@ and open the template in the editor.
             <!-- Partie de droite: le reste -->
             <div id="rightSide" >
                 <div id="tabs">
-                    <ul>
+                    <ul id="tabs_list">
                         <li><a href="#tabs-1"> fichier.html </a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span> </li>
                     </ul>
                     <div id="tabs-1">
