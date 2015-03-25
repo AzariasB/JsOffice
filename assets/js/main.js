@@ -1,10 +1,3 @@
-//       _      ____   __  __ _          
-//      | |    / __ \ / _|/ _(_)         
-//      | |___| |  | | |_| |_ _  ___ ___ 
-//  _   | / __| |  | |  _|  _| |/ __/ _ \
-// | |__| \__ \ |__| | | | | | | (_|  __/
-//  \____/|___/\____/|_| |_| |_|\___\___|
-//
 
 $(document).ready(function() {
 
@@ -21,7 +14,6 @@ $(document).ready(function() {
      * Comme ça on a pas un index.php tout moche et incompréhensible
      */
     $(function() {
-        $.ajax({async: false});
         //Chargement de l'éditeur de texte
         $('#tabs-1').load(window.location.pathname + 'assets/views/textEditor.php', function() {
             initDoc();
@@ -96,7 +88,6 @@ $(document).ready(function() {
             tabs.tabs("refresh");
             tabCounter++;
             $("#" + id).load(window.location.pathname + 'assets/views/textEditor.php', function() {
-                initDoc();
             });
         }
 
@@ -126,3 +117,12 @@ $(document).ready(function() {
     console.log('By Pierre & Azarias');
 
 });
+
+//       _      ____   __  __ _          
+//      | |    / __ \ / _|/ _(_)         
+//      | |___| |  | | |_| |_ _  ___ ___ 
+//  _   | / __| |  | |  _|  _| |/ __/ _ \
+// | |__| \__ \ |__| | | | | | | (_|  __/
+//  \____/|___/\____/|_| |_| |_|\___\___|
+//
+// By Pierre & Azarias

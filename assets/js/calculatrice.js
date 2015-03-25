@@ -3,13 +3,8 @@ var edition = false;
 var up = true;
 var z_a = $('#zone_affichage');
 
-
-console.log("LZLDQZIJDQZIODIOQZJD");
-
 $(document).ready(function() {
-
     init();
-
 });
 
 
@@ -20,7 +15,6 @@ function init() {
     });
     var donnes = recup_donnee();
     donnes = JSON.parse(donnes);
-    console.log(donnes);
     for (var index in donnes.fonctions) {
         $('#' + donnes.fonctions[index].id).val(donnes.fonctions[index].val);
     }

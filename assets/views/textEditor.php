@@ -77,7 +77,7 @@
         <span class="intLink fa fa-indent" title="Delete indentation" onclick="formatDoc('indent');" ></span>
         <span class="intLink fa fa-link" title="Hyperlink" onclick="var sLnk = prompt('Write the URL here', 'http:\/\/');
                 if (sLnk && sLnk != '' && sLnk != 'http://') {
-                    formatDoc('createlink', sLnk)
+                    formatDoc('createlink', sLnk);
                 }" ></span>
         <span class="intLink fa fa-cut" title="Cut" onclick="formatDoc('cut');" ></span>
         <span class="intLink fa fa-copy" title="Copy" onclick="formatDoc('copy');" ></span>
