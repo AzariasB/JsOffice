@@ -5,6 +5,7 @@ var oDoc, sDefTxt;
 function initDoc() {
     oDoc = document.getElementById("textBox");
     sDefTxt = oDoc.innerHTML;
+    console.log(document.compForm);
     if (document.compForm.switchMode.checked) {
         setDocMode(true);
     }

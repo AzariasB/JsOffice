@@ -20,6 +20,7 @@
                             {
                                 node = tree.create_node(node);
                                 tree.edit(node);
+                                save_jsTree(node);
                             }
                         },
                 "item2":
@@ -29,6 +30,7 @@
                             {
                                 node = tree.create_node(node, {"type": "file"});
                                 tree.edit(node);
+                                save_jsTree(node);
                             }
                         },
                 "item3":
@@ -37,6 +39,7 @@
                             "action": function(obj)
                             {
                                 tree.edit(node);
+                                save_jsTree(node);
                             }
                         },
                 "item4":
@@ -45,6 +48,7 @@
                             "action": function(obj)
                             {
                                 tree.delete_node(node);
+                                save_jsTree(node);
                             }
                         }
             };

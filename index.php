@@ -25,7 +25,10 @@ and open the template in the editor.
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src = "assets/js/main.js" ></script>
+        <!-- Tout le javascript de l'éditeur de texte-->
         <script src="assets/js/textEditor.js"></script>
+        <!-- Toutes les fonctions js qui permettent de faire des accès ajax à la BDD et sauvegarder/récupérer des données-->
+        <script src="assets/js/the_saver.js"></script>
         
 
         <h1>JsOffice</h1>
