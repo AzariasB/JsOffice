@@ -17,6 +17,7 @@ and open the template in the editor.
         <link href="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/M4103C/projet/jquery-ui.css" rel="stylesheet">
         <link href="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/M4103C/projet/style.css" rel="stylesheet">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/calculatrice.css">
     </head>
     <body>
         <!--Tout les liens javascript, à ajouter dans le bone ordre-->
@@ -25,6 +26,7 @@ and open the template in the editor.
         <script src="assets/js/jstree.min.js"></script>
         <script src = "assets/js/main.js" ></script>
         <script src="assets/js/textEditor.js"></script>
+        
 
         <h1>JsOffice</h1>
         <div id="kernel" >

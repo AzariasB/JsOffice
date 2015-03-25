@@ -10,7 +10,7 @@ html{
 
 #leftSide{
     display: inline-block;
-    width: 20%;
+    width: 30%;
     height: 80vh;   
 }
 
@@ -20,7 +20,7 @@ html{
 }
 #rightSide{
     display: inline-block;
-    width: 79%;
+    width: 69%;
     vertical-align: top;
     float: right;
 }
