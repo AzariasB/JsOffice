@@ -46,3 +46,8 @@ img.intLink { border: 0; }
 h3:before{
     content: none !important;
 }
+
+.ui-icon-close{
+    cursor: pointer;
+    float: right;
+}
