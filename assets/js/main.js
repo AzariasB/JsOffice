@@ -16,13 +16,14 @@ $(document).ready(function() {
             tabTemplate = "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>",
             tabCounter;
 
+    $.ajax({async: false});
 
     /*
      * Ici, on charge les différentes parties du document
      * Comme ça on a pas un index.php tout moche et incompréhensible
      */
     $(function() {
-        $.ajax({async: false});
+
         //Chargement de l'éditeur de texte
         $('#tabs-1').load(window.location.pathname + 'assets/views/textEditor.php', function() {
             initDoc();
