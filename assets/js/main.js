@@ -62,14 +62,23 @@ $(document).ready(function () {
 
         //Le jsTree qui doit ouvrir des tabs
         $(document.body).on('click', '.openable', function () {
-            addTab($(this).children());
+            addTab($(this));
         });
-        
+
         //Dès que le jsTree est modifié, on enregistre
         $('#tree').on('rename_node.jstree move_node.jstree delete_node.jstree create_node.jstree set_text.jstree',
-        function(e,data){
+                function (e, data) {
                     save_jsTree();
-        }); 
+                });
+
+        //Dès qu'on créer un fichier => celui-ci est la classe 'openable' pour pouvoir l'ouvrir
+        $('#tree').on('create_node.jstree',
+                function (e, data) {
+                    if (data.node.type === "file") {
+                        data.node.a_attr.class = "openable";
+
+                    }
+                });
     }
 
 
@@ -79,6 +88,7 @@ $(document).ready(function () {
         $(tabs.find('#tabs_list>li')).each(function (index) {
             if ($(this).children('a').text() === $(tabTitle).text()) {
                 trouve = true;
+                //Faire en sorte que quand on change de tab, on change l'éditeur de text aussi
                 tabs.tabs({active: index});
             }
         });
@@ -92,9 +102,16 @@ $(document).ready(function () {
             tabs.find(".ui-tabs-nav").append(li);
             tabs.append("<div id='" + id + "'></div>");
             tabs.tabs("refresh");
-            tabCounter++;
-            $("#" + id).load(window.location.pathname + 'assets/views/textEditor.php', function () {
+            //On focus sur le tab que l'on vient de créer
+            $("#tabs").tabs({
+                active: tabCounter-1
             });
+            var editorId = '#' + id;
+            $(editorId).load(window.location.pathname + 'assets/views/textEditor.php', function () {
+               $(editorId).find('#textBox').attr('id','textBox-' + (tabCounter-1) );
+                changeDoc("textBox-" + (tabCounter-1) );
+            });
+            tabCounter++;
         }
 
     }

@@ -28,7 +28,7 @@ html{
 .intLink { cursor: pointer; }
 img.intLink { border: 0; }
 #toolBar1 select { font-size:10px; }
-#textBox {
+div[id^="textBox"] {
     width: 540px;
     height: 200px;
     border: 1px #000000 solid;

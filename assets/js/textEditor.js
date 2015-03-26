@@ -3,13 +3,23 @@
 var oDoc, sDefTxt;
 
 function initDoc() {
-    console.log(oDoc);
     oDoc = document.getElementById("textBox");
     sDefTxt = oDoc.innerHTML;
     if (document.compForm.switchMode.checked) {
         setDocMode(true);
     }
 
+}
+
+/**
+ *  Quand on change de tab, il faut changer certains paramètres de l'éditeur de texte
+ * @param {string} idTexBox l'id de la nouvelle TextBox que l'on va éditer
+ * @returns {undefined}
+ */
+function changeDoc(idTexBox){
+    oDoc = document.getElementById(idTexBox);
+    sDefTxt = oDoc.innerHTML;
+    return;
 }
 
 function formatDoc(sCmd, sValue) {

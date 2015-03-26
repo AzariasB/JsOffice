@@ -56,10 +56,10 @@
             // initialisation de l'arbre
             $('#tree').jstree({
                 'core': {
-                    "animation": 0,
+                    "animation": 10,
                     "check_callback": true,
                     "themes": {"stripes": true},
-                    'data': {"url": "./assets/js/data/root.json", "dataType": "json"}// needed only if you do not supply JSON headers
+                    'data': {"url": "./assets/js/data/root.json", "dataType": "json"}// needed only if you do not supply JSON headers,
                 },
                 "types": {
                     "#": {"max_children": 1, "max_depth": 4, "valid_children": ["root"]},
@@ -68,7 +68,7 @@
                     "file": {'icon': "./assets/images/blog.png", "valid_children": []}
                 },
                 "plugins": ["contextmenu", "dnd", "state", "types", "wholerow"],
-                "contextmenu": {"items": createmenu}
+                "contextmenu": {"items": createmenu},
             });
         }
     </script>
