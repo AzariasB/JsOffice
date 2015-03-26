@@ -1,21 +1,21 @@
 
 
 
-
-function save_jsTree(node) {
-    var v = $.tree.reference("#tree").get();
-    var apres = JSON.stringify(v);
-    console.log(apres);
+//Sauvegarder l'état de l'arbre
+function save_jsTree() {
+    var v = $('#tree').jstree(true).get_json('#', {flat: true})
+    var mytext = JSON.stringify(v);
+    
     $.ajax({
         url: "./assets/views/the_saver.php",
         type: "get", //send it through get method
         data: {
             action: 'save_jstree',
-            data: apres,
+            data: mytext,
         },
-        success: function(response) {
+        success: function (response) {
             //Do Something
-        },
+        }
     });
 }
 

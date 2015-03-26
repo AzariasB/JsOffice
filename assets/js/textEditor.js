@@ -3,6 +3,7 @@
 var oDoc, sDefTxt;
 
 function initDoc() {
+    console.log(oDoc);
     oDoc = document.getElementById("textBox");
     sDefTxt = oDoc.innerHTML;
     if (document.compForm.switchMode.checked) {

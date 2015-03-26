@@ -1,5 +1,5 @@
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     /*
      * Toutes les variables correspondant aux parties de la DOM
@@ -13,26 +13,26 @@ $(document).ready(function() {
      * Ici, on charge les différentes parties du document
      * Comme ça on a pas un index.php tout moche et incompréhensible
      */
-    $(function() {
+    $(function () {
         //Chargement de l'éditeur de texte
-        $('#tabs-1').load(window.location.pathname + 'assets/views/textEditor.php', function() {
+        $('#tabs-1').load(window.location.pathname + 'assets/views/textEditor.php', function () {
             initDoc();
         });
         //Chargement de l'accordeon latéral
         $('#accordion').
-                load(window.location.pathname + 'assets/views/accordion.php', function() {
+                load(window.location.pathname + 'assets/views/accordion.php', function () {
                     setUpAccordion();
                 });
     });
 
     //Gère les tabs du menu
-    $(function() {
+    $(function () {
         tabCounter = 2;
         tabs
                 .tabs({
                     event: "click"
                 })
-                .delegate("span.ui-icon-close", "click", function() {
+                .delegate("span.ui-icon-close", "click", function () {
                     var panelId = $(this).closest("li").remove().attr("aria-controls");
                     $("#" + panelId).remove();
                     tabs.tabs("refresh");
@@ -51,7 +51,7 @@ $(document).ready(function() {
                 .sortable({
                     axis: "y",
                     handle: "h3",
-                    stop: function(event, ui) {
+                    stop: function (event, ui) {
                         // IE doesn't register the blur when sorting
                         // so trigger focusout handlers to remove .ui-state-focus
                         ui.item.children("h3").triggerHandler("focusout");
@@ -61,16 +61,22 @@ $(document).ready(function() {
                 });
 
         //Le jsTree qui doit ouvrir des tabs
-        $(document.body).on('click', '.openable', function() {
+        $(document.body).on('click', '.openable', function () {
             addTab($(this).children());
         });
+        
+        //Dès que le jsTree est modifié, on enregistre
+        $('#tree').on('rename_node.jstree move_node.jstree delete_node.jstree create_node.jstree set_text.jstree',
+        function(e,data){
+                    save_jsTree();
+        }); 
     }
 
 
     function addTab(tabTitle) {
         //Si la tab exist déjà, on change d'index pour aller vers lui
         var trouve = false;
-        $(tabs.find('#tabs_list>li')).each(function(index) {
+        $(tabs.find('#tabs_list>li')).each(function (index) {
             if ($(this).children('a').text() === $(tabTitle).text()) {
                 trouve = true;
                 tabs.tabs({active: index});
@@ -87,7 +93,7 @@ $(document).ready(function() {
             tabs.append("<div id='" + id + "'></div>");
             tabs.tabs("refresh");
             tabCounter++;
-            $("#" + id).load(window.location.pathname + 'assets/views/textEditor.php', function() {
+            $("#" + id).load(window.location.pathname + 'assets/views/textEditor.php', function () {
             });
         }
 

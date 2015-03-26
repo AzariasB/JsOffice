@@ -1,10 +1,10 @@
 
-
-<form name="compForm" method="post" action="sample.php" onsubmit="if (validateMode()) {
-            this.myDoc.value = oDoc.innerHTML;
-            return true;
-        }
-        return false;">
+<form name="compForm" method="post" action="sample.php" 
+      onsubmit="if (validateMode()) {
+                  this.myDoc.value = oDoc.innerHTML;
+                  return true;
+              }
+              return false;">
     <input type="hidden" name="myDoc">
     <div id="toolBar1">
         <select onchange="formatDoc('formatblock', this[this.selectedIndex].value);

@@ -16,39 +16,35 @@
                 "item1":
                         {
                             "label": "Create Directory",
-                            "action": function()
+                            "action": function ()
                             {
                                 node = tree.create_node(node);
                                 tree.edit(node);
-                                save_jsTree(node);
                             }
                         },
                 "item2":
                         {
                             "label": "Create File",
-                            "action": function()
+                            "action": function ()
                             {
                                 node = tree.create_node(node, {"type": "file"});
                                 tree.edit(node);
-                                save_jsTree(node);
                             }
                         },
                 "item3":
                         {
                             "label": "Rename",
-                            "action": function(obj)
+                            "action": function (obj)
                             {
                                 tree.edit(node);
-                                save_jsTree(node);
                             }
                         },
                 "item4":
                         {
                             "label": "Remove",
-                            "action": function(obj)
+                            "action": function (obj)
                             {
                                 tree.delete_node(node);
-                                save_jsTree(node);
                             }
                         }
             };
