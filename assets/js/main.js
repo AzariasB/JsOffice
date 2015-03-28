@@ -4,7 +4,7 @@ $(document).ready(function () {
     /*
      * Toutes les variables correspondant aux parties de la DOM
      */
-    var tabs = $("#tabs"),
+    var m_tabs = $("#tabs"),
             tabContent = $("#accordion"),
             tabTemplate = "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>",
             tabCounter;
@@ -28,14 +28,22 @@ $(document).ready(function () {
     //Gère les tabs du menu
     $(function () {
         tabCounter = 2;
-        tabs
+        m_tabs
                 .tabs({
-                    event: "click"
+                    event: "click",
+                    activate : function(event,ui){
+                        setTimeout(function(){
+                            //On prévient qu'on change d'éditeur de texte, après avoir chargé celui-ci
+                            // Si ce n'a pas déjà été fait
+                            changeDoc($(ui.newPanel.selector).find("div[id*='textBox']").attr('id'));
+                        },100);
+                        
+                    }
                 })
                 .delegate("span.ui-icon-close", "click", function () {
                     var panelId = $(this).closest("li").remove().attr("aria-controls");
                     $("#" + panelId).remove();
-                    tabs.tabs("refresh");
+                    m_tabs.tabs("refresh");
                 });
     });
 
@@ -60,7 +68,7 @@ $(document).ready(function () {
                     }
                 });
 
-        //Le jsTree qui doit ouvrir des tabs
+        //Les documents JsTree qui doivent  ouvrir des tabs
         $(document.body).on('click', '.openable', function () {
             addTab($(this));
         });
@@ -85,11 +93,11 @@ $(document).ready(function () {
     function addTab(tabTitle) {
         //Si la tab exist déjà, on change d'index pour aller vers lui
         var trouve = false;
-        $(tabs.find('#tabs_list>li')).each(function (index) {
+        $(m_tabs.find('#tabs_list>li')).each(function (index) {
             if ($(this).children('a').text() === $(tabTitle).text()) {
                 trouve = true;
                 //Faire en sorte que quand on change de tab, on change l'éditeur de text aussi
-                tabs.tabs({active: index});
+                m_tabs.tabs({active: index});
             }
         });
 
@@ -99,9 +107,9 @@ $(document).ready(function () {
                     id = "tabs-" + tabCounter,
                     li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)),
                     tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
-            tabs.find(".ui-tabs-nav").append(li);
-            tabs.append("<div id='" + id + "'></div>");
-            tabs.tabs("refresh");
+            m_tabs.find(".ui-tabs-nav").append(li);
+            m_tabs.append("<div id='" + id + "'></div>");
+            m_tabs.tabs("refresh");
             //On focus sur le tab que l'on vient de créer
             $("#tabs").tabs({
                 active: tabCounter-1
