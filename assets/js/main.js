@@ -23,21 +23,19 @@ $(document).ready(function () {
                 load(window.location.pathname + 'assets/views/accordion.php', function () {
                     setUpAccordion();
                 });
-    });
 
-    //Gère les tabs du menu
-    $(function () {
+        //Gère les tabs du menu
         tabCounter = 2;
         m_tabs
                 .tabs({
                     event: "click",
-                    activate : function(event,ui){
-                        setTimeout(function(){
+                    activate: function (event, ui) {
+                        setTimeout(function () {
                             //On prévient qu'on change d'éditeur de texte, après avoir chargé celui-ci
                             // Si ce n'a pas déjà été fait
                             changeDoc($(ui.newPanel.selector).find("div[id*='textBox']").attr('id'));
-                        },100);
-                        
+                        }, 100);
+
                     }
                 })
                 .delegate("span.ui-icon-close", "click", function () {
@@ -45,6 +43,14 @@ $(document).ready(function () {
                     $("#" + panelId).remove();
                     m_tabs.tabs("refresh");
                 });
+               
+        //On met un petit laps de temps pour pouvoir apprécier le chargement :)
+        setTimeout(function () {
+            $('#chargement').fadeOut();
+            $('#jsOffice').show();
+        }, 3000);
+
+
     });
 
     function setUpAccordion() {
@@ -112,12 +118,12 @@ $(document).ready(function () {
             m_tabs.tabs("refresh");
             //On focus sur le tab que l'on vient de créer
             $("#tabs").tabs({
-                active: tabCounter-1
+                active: tabCounter - 1
             });
             var editorId = '#' + id;
             $(editorId).load(window.location.pathname + 'assets/views/textEditor.php', function () {
-               $(editorId).find('#textBox').attr('id','textBox-' + (tabCounter-1) );
-                changeDoc("textBox-" + (tabCounter-1) );
+                $(editorId).find('#textBox').attr('id', 'textBox-' + (tabCounter - 1));
+                changeDoc("textBox-" + (tabCounter - 1));
             });
             tabCounter++;
         }
