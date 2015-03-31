@@ -22,6 +22,9 @@ Dependencies
   <li>
     <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>
   </li>
+  <li>
+      <a href="https://github.com/HubSpot/pace/">Pace.js</a>
+  </li>
 </ul>
  
 
