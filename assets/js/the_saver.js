@@ -19,6 +19,7 @@ function save_jsTree() {
     });
 }
 
-function get_jsTree() {
-
+//Sauver le texte de l'éditeur de texte
+function save_texte(){
+    
 }
