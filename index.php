@@ -22,6 +22,7 @@ Un bureau virtuel réalisé en HTML5/CSS3/Js ecma5
         <link rel="stylesheet" href="assets/font/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/calculatrice.css">
         <link rel="stylesheet" href="assets/jstree/dist/themes/default/style.min.css">
+        <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
     </head>
     <body>
 
