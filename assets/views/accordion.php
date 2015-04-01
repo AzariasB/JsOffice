@@ -16,7 +16,7 @@
                 "item1":
                         {
                             "label": "Create Directory",
-                            "action": function ()
+                            "action": function()
                             {
                                 node = tree.create_node(node);
                                 tree.edit(node);
@@ -25,7 +25,7 @@
                 "item2":
                         {
                             "label": "Create File",
-                            "action": function ()
+                            "action": function()
                             {
                                 node = tree.create_node(node, {"type": "file"});
                                 tree.edit(node);
@@ -34,7 +34,7 @@
                 "item3":
                         {
                             "label": "Rename",
-                            "action": function (obj)
+                            "action": function(obj)
                             {
                                 tree.edit(node);
                             }
@@ -42,7 +42,7 @@
                 "item4":
                         {
                             "label": "Remove",
-                            "action": function (obj)
+                            "action": function(obj)
                             {
                                 tree.delete_node(node);
                             }
@@ -149,7 +149,12 @@
 <div >
     <h3>Calendrier</h3>
     <div>
-        <p>HAHAHAHAHAHHA</p>
+        <script>
+                  $(function() {
+                      $("#datepicker").datepicker();
+                  });
+        </script>
+        <div id="datepicker"></div>
     </div>
 </div>
 <div>
