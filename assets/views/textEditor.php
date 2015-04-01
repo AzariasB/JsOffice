@@ -85,5 +85,5 @@
     </div>
     <div id="textBox" contenteditable="true"><p>Lorem ipsum</p></div>
     <p id="editMode"><input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /> <label for="switchBox">Show HTML</label></p>
-    <p><input type="button" onclick="save_texte()" value="Send" /></p>
+    <p><input type="button" onclick="save_texte()" value="Sauvegarder" class="fa fa-download" /></p>
 </form>
