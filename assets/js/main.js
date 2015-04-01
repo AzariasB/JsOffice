@@ -45,10 +45,6 @@ $(document).ready(function() {
                 });
 
         //On met un petit laps de temps pour pouvoir apprécier le chargement :)
-
-     //   setTimeout(function() {
-            $('#jsOffice').show();
-    //    }, 500);
     });
 
     function setUpAccordion() {

@@ -14,31 +14,27 @@ Un bureau virtuel réalisé en HTML5/CSS3/Js ecma5
         <link href="assets/css/pace_style.css" rel="stylesheet" >
         
         <!--Liens css-->
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
         <link href="assets/css/mystyle.css" rel="stylesheet">
         <link href="assets/css/textEditor_style.css" rel="stylesheet">
-        <link href="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/M4103C/projet/jquery-ui.css" rel="stylesheet">
+        <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
         <link href="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/M4103C/projet/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/font/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/calculatrice.css">
         <link rel="stylesheet" href="assets/jstree/dist/themes/default/style.min.css">
     </head>
     <body>
 
-        <!-- Pour animer l'écran de chargement -->
-        <script src="assets/js/DrawSVGPlugin.min.js"></script>
-        <script src="assets/js/TweenMax.min.js"></script>
-
         <!--Tout les liens javascript, à ajouter dans le bone ordre-->
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
         <script src = "assets/js/main.js" ></script>
         <!-- Tout le javascript de l'éditeur de texte-->
         <script src="assets/js/textEditor.js"></script>
         <!-- Toutes les fonctions js qui permettent de faire des accès ajax à la BDD et sauvegarder/récupérer des données-->
         <script src="assets/js/the_saver.js"></script>
 
-        <div id="jsOffice" hidden="" >
+        <div id="jsOffice" >
             <h1>JsOffice</h1>
 
             <div id="kernel">
