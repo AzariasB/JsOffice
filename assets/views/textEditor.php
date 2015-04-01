@@ -67,6 +67,8 @@
         <span class="intLink fa fa-bold" title="Bold" onclick="formatDoc('bold');" ></span>
         <span class="intLink fa fa-italic" title="Italic" onclick="formatDoc('italic');" ></span>
         <span class="intLink fa fa-underline" title="Underline" onclick="formatDoc('underline');" ></span>
+        <span class="intLink fa fa-strikethrough" title="Strike" onclick="formatDoc('strikethrough');" ></span>
+        <span class="intLink fa fa-" title="Strike" onclick="formatDoc('strikethrough');" ></span>
         <span class="intLink fa fa-align-left" title="Left align" onclick="formatDoc('justifyleft');"></span>
         <span class="intLink" title="Center align" onclick="formatDoc('justifycenter');"></span>
         <span class="intLink fa fa-align-right" title="Right align" onclick="formatDoc('justifyright');" ></span>
@@ -75,6 +77,7 @@
         <span class="intLink fa fa-quote-left" title="Quote" onclick="formatDoc('formatblock', 'blockquote');" ></span>
         <span class="intLink fa fa-outdent" title="Add indentation" onclick="formatDoc('outdent');"></span>
         <span class="intLink fa fa-indent" title="Delete indentation" onclick="formatDoc('indent');" ></span>
+         
         <span class="intLink fa fa-link" title="Hyperlink" onclick="var sLnk = prompt('Write the URL here', 'http:\/\/');
                 if (sLnk && sLnk != '' && sLnk != 'http://') {
                     formatDoc('createlink', sLnk);
