@@ -58,6 +58,12 @@ Un bureau virtuel réalisé en HTML5/CSS3/Js ecma5
                 </div>
             </div>
         </div>
+        <?php
+            $date = date("d-m-Y");
+            $heure = date("H:i");
+            print("<br>");
+            print("Vous êtes connectés depuis $heure le $date ");
+        ?>
     </body>
 </html>
 
