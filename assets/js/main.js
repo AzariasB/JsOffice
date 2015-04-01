@@ -17,6 +17,7 @@ $(document).ready(function() {
         //Chargement de l'éditeur de texte
         $('#tabs-1').load(window.location.pathname + 'assets/views/textEditor.php', function() {
             initDoc();
+
         });
         //Chargement de l'accordeon latéral
         $('#accordion').
@@ -44,8 +45,34 @@ $(document).ready(function() {
                     m_tabs.tabs("refresh");
                 });
 
-        //On met un petit laps de temps pour pouvoir apprécier le chargement :)
+        chargerTexte();
     });
+
+    function chargerTexte() {
+        var active = $('#tabs').tabs('option', 'active');
+
+        var nomTab = $('#tabs_list').children().eq(0);
+        var nomFichier = nomTab.text().replace(/\s/g, "").replace("RemoveTab", "");
+        console.log(nomFichier);
+
+        $.ajax({
+            url: "./assets/views/the_saver.php",
+            type: "get", //send it through get method
+            data: {
+                action: 'get_text',
+                fileName: nomFichier
+            },
+            success: function(response) {
+               if(response === 'failed'){
+                   alert('Le fichier ' + nomFichier + " n'as pas pu être récupéré");
+               }else{
+                   $('#' + oDoc.id).html(response);
+               }
+            }
+        });
+
+
+    }
 
     function setUpAccordion() {
         //L'accordéon en lui-même
