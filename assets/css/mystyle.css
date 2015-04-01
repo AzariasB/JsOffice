@@ -4,6 +4,7 @@ html{
 }
 
 #kernel{
+    margin-top: 100px;
     padding: 5px;
     background-color: grey;
 }
@@ -118,4 +119,12 @@ h3:before{
         width: 280px;
         background: rgba(0,0,0,0.1);
     }
+}
+
+#logo_jsoffice{
+    width: 175px;
+    height: auto;
+    position: absolute;
+    top: 0px;
+    margin-left: 50px;
 }
