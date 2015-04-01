@@ -51,7 +51,7 @@ $(document).ready(function() {
     function chargerTexte() {
         var active = $('#tabs').tabs('option', 'active');
 
-        var nomTab = $('#tabs_list').children().eq(0);
+        var nomTab = $('#tabs_list').children().eq(active);
         var nomFichier = nomTab.text().replace(/\s/g, "").replace("RemoveTab", "");
         console.log(nomFichier);
 
@@ -63,11 +63,11 @@ $(document).ready(function() {
                 fileName: nomFichier
             },
             success: function(response) {
-               if(response === 'failed'){
-                   alert('Le fichier ' + nomFichier + " n'as pas pu être récupéré");
-               }else{
-                   $('#' + oDoc.id).html(response);
-               }
+                if (response === 'failed') {
+                    alert('Le fichier ' + nomFichier + " n'as pas pu être récupéré");
+                } else {
+                    $('#' + oDoc.id).html(response);
+                }
             }
         });
 
@@ -104,6 +104,11 @@ $(document).ready(function() {
         $('#tree').on('rename_node.jstree move_node.jstree delete_node.jstree create_node.jstree set_text.jstree',
                 function(e, data) {
                     save_jsTree();
+                });
+
+        $('#tree').on('delete_node.jstree',
+                function(e, data) {
+                    delete_tree(data);
                 });
 
         //Dès qu'on créer un fichier => celui-ci est la classe 'openable' pour pouvoir l'ouvrir
@@ -146,9 +151,36 @@ $(document).ready(function() {
                 $(editorId).find('#textBox').attr('id', 'textBox-' + (tabCounter - 1));
                 changeDoc("textBox-" + (tabCounter - 1));
             });
+            chargerTexte();
             tabCounter++;
         }
 
+    }
+
+    function delete_tree(data) {
+        console.log(data.node.text.replace(/\s/g, ""));
+        //D'abord on ferme un tab
+        $('#tabs').children().eq(0).children().each(function(index,elem){
+            console.log($(elem).children().eq(0).text() );
+            if(data.node.text === $(elem).children().eq(0).text()){
+                $(elem).remove();
+                m_tabs.tabs("refresh");
+            }
+        });
+
+        //Ensuite on supprime le fichier
+        $.ajax({
+            url: "./assets/views/the_saver.php",
+            type: "get", //send it through get method
+            data: {
+                action: 'delete_file',
+                fileName : data.node.text.replace(/\s/g, ""),
+            },
+            success: function(response) {
+                //alert
+                alert('Le fichier a bien été supprimé');
+            }
+        });
     }
 
 

@@ -2,6 +2,9 @@
 
 define('DATA_PATH', './data/');
 
+define('SUCCESS','success');
+define('FAIL', 'failed');
+
 $command = $_GET;
 
 switch ($command['action']) {
@@ -17,6 +20,8 @@ switch ($command['action']) {
     case "get_text" :
         echo get_text();
         break;
+    case 'delete_file' :
+        echo delete_file();
     default :
         break;
 }
@@ -35,27 +40,41 @@ function get_tree() {
     return $data;
 }
 
-function save_text(){
+function save_text() {
     $file_name = $_GET['fileName'];
     $text = $_GET['data'];
-   
-    
-    
-    if(isset($file_name) && !empty($file_name) ){        
+
+
+
+    if (isset($file_name) && !empty($file_name)) {
         file_put_contents(DATA_PATH . $file_name, $text);
-        return 'success';
-    }else{
-        return 'failed';
+        return SUCCESS;
+    } else {
+        return FAIL;
     }
 }
 
-function get_text(){
+function get_text() {
+    $file_name = $_GET['fileName'];
+
+    if (isset($file_name) && !empty($file_name)) {
+        if (file_exists(DATA_PATH . $file_name)) {
+           return file_get_contents(DATA_PATH . $file_name);
+        } else {
+            return '';
+        }
+    } else {
+        return FAIL;
+    }
+}
+
+function delete_file(){
     $file_name = $_GET['fileName'];
     
-    if(isset($file_name) && !empty($file_name)){
-        $text = file_get_contents(DATA_PATH . $file_name);
-        return $text;
+    if(isset($file_name) && !empty($file_name) && file_exists(DATA_PATH . $file_name)){
+        unlink(DATA_PATH . $file_name);
+        return SUCCESS;
     }else{
-        return 'failed';
+        return 'nothing';
     }
 }
