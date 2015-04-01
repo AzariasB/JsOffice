@@ -12,7 +12,7 @@ Un bureau virtuel réalisé en HTML5/CSS3/Js ecma5
         <!-- Pour le chargement de la page -->
         <script src="assets/js/pace.js"></script>
         <link href="assets/css/pace_style.css" rel="stylesheet" >
-        
+
         <!--Liens css-->
         <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
         <link href="assets/css/mystyle.css" rel="stylesheet">
@@ -27,7 +27,7 @@ Un bureau virtuel réalisé en HTML5/CSS3/Js ecma5
     <body>
 
         <!--Tout les liens javascript, à ajouter dans le bone ordre-->
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
         <script src = "assets/js/main.js" ></script>
         <!-- Tout le javascript de l'éditeur de texte-->
@@ -58,6 +58,12 @@ Un bureau virtuel réalisé en HTML5/CSS3/Js ecma5
                 </div>
             </div>
         </div>
+        <?php
+            $date = date("d-m-Y");
+            $heure = date("H:i");
+            print("<br>");
+            print("Vous êtes connectés depuis $heure le $date ");
+        ?>
     </body>
 </html>
 
